@@ -1,5 +1,6 @@
-var host = location.origin.replace(/^http/, 'ws');
-var socket = host || io.connect('http://localhost:3000');
+//var host = location.origin.replace(/^http/, 'ws');
+//var socket = host || io.connect('http://localhost:3000');
+var sockcet = io();
 const TRANS_EFFECT_TIME = 300;
 const AJAX_TIMEOUT = 10000;
 const NORMAL_ANSWER_TIME = 10000;
