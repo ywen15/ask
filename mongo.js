@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var url = 'mongodb://localhost:27017/';
+var url = 'mongodb://heroku_0f48fn51:tt7e43vuck0gejasffb25nb7ap@ds027155.mongolab.com:27155/heroku_0f48fn51';
+//var url = 'mongodb://localhost:27017/';
 var dbname = 'ask';
 var db = null;
 var User = null;
