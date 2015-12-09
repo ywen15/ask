@@ -1,3 +1,7 @@
+$place: #4467BE;
+$name: #212857;
+$time: #212857;
+
 @mixin rank() {
   height: 100%;
   border: 10px white solid;
@@ -6,43 +10,47 @@
   font-weight: bold;
 }
 
-#side {
-  @include rank()
-  div {
-    font-size:28pt;
-    width: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100%;
-    text-align: center;
-  }
-}
-
-#rows {
-  @include rank()
-  font-size: 18pt;
-  .page { display: none }
-  .row {
-    visibility: hidden;
-    text-align: center;
-    &:not(:last-child) { margin-bottom: 9px; }
+#rank {
+  width: 100%;
+  height: 100%;
+  #side {
+    @include rank()
     div {
-      padding-top: 10px;
-      border-radius: 10px;
-      height: 100%;
+      font-size:28pt;
+      width: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100%;
+      text-align: center;
     }
-    .place { background-color: $place; }
-    .name {
-      margin: 0px 5px;
-      background: -webkit-linear-gradient(left, $place , $name); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(right, $place , $name); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(right, $place , $name); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(to right, $place , $name); /* Standard syntax */
+  }
+
+  #rows {
+    @include rank()
+    font-size: 18pt;
+    .page { display: none }
+    .row {
+      visibility: hidden;
+      text-align: center;
+      &:not(:last-child) { margin-bottom: 9px; }
+      div {
+        padding-top: 10px;
+        border-radius: 10px;
+        height: 100%;
+      }
+      .place { background-color: $place; }
+      .name {
+        margin: 0px 5px;
+        background: -webkit-linear-gradient(left, $place , $name); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, $place , $name); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, $place , $name); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, $place , $name); /* Standard syntax */
+      }
+      span {
+        font-weight: normal;
+        font-size: 14pt;
+      }
+      .time { background-color: $time; }
     }
-    span {
-      font-weight: normal;
-      font-size: 14pt;
-    }
-    .time { background-color: $time; }
   }
 }

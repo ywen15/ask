@@ -56,38 +56,90 @@ function appendOverall() {
       }
     });
   });
+  Q_under10.reverse();
+  if(Q_under10.length >= 2) {
+    Q_top10 = Q_under10.splice(-1, 1)[0];
+    Q_top5 = Q_top10.splice(5, 5);
+    winner = Q_top5.splice(-1, 1);
+  }
   return def.promise();
 }
 
 function ready() {
+  $('.row').height($(window).height() / RESULT_PER_PAGE - 10);
   hideLoader();
   //console.log(Q_under10)
 }
 
-function showUnder10() {
-  $('#titleOverall').css('display', 'block');
-  var intObj = setInterval(show, OVERALL_INTERVAL);
+function showPage(pageIndex, pageArray) {
+  $('.page' + pageIndex).css('display', 'block');
 
-  function show() {
-    if(Q.length <= 10) {
-      clearInterval(intObj);
-      return;
-    }
-    var row = Q.pop();
-    //
+  $.each(pageArray, function(index, value) {
+    setTimeout(function() {
+      $('#' + value).css('visibility', 'visible');
+    }, index * OVERALL_INTERVAL);
+  });
+
+  if(pageIndex > 1) {
+    setTimeout(function() {
+      $('.page' + pageIndex).css('display', 'none');
+    }, OVERALL_PAGE_TRANS + pageArray.length * OVERALL_INTERVAL);
+  }
+  else {
+    setTimeout(function() {
+      audio_overall.pause();
+    }, (pageArray.length + 1) * OVERALL_INTERVAL);
   }
 }
 
+function showUnder10() {
+  $('#titleOverall').css('display', 'block');
+  audio_overall.play();
+  var rows = Q_under10[0].length;
+
+  $.each(Q_under10, function(index, value) {
+    if(index > 0) rows = value.length;
+    setTimeout(function() {
+      showPage(Q_under10.length-index, value);
+    }, index * OVERALL_INTERVAL * rows);
+  });
+}
+
 function showTop10() {
-  //
+  $('.page1').css('display', 'none');
+  $('.page0').css('display', 'block');
+
+  audio_top.play();
+  audio_top.currentTime = 4.5;
+  $.each(Q_top10, function(index, value) {
+    setTimeout(function() {
+      $('#' + value).css('visibility', 'visible');
+    }, OVERALL_INTERVAL * index);
+  });
+  setTimeout(function() {
+    audio_top.pause();
+  }, OVERALL_INTERVAL * (Q_top10.length + 1));
 }
 
 function showTop5() {
-  //
+  audio_top.currentTime = 11;
+
+  audio_top.play();
+  $('#' + Q_top5[Q_top5.length - state]).css('visibility', 'visible');
+  setTimeout(function() {
+    audio_top.pause();
+  }, TOP5_DURATION);
 }
 
 function showWinner() {
-  //
+  var $winner = $('#' + winner[0]);
+
+  audio_top.currentTime = 11;
+  audio_top.play();
+
+  $winner.children().css('background', '#D50F77');
+  $winner.css('visibility', 'visible');
+  $winner.effect('pulsate', { times: PULSATE_FREQ }, PULSATE_DURATION);
 }
 
 $(document).ready(function() {
