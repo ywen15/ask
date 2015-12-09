@@ -12,11 +12,13 @@ function init() {
 }
 
 function prev() {
+  if(current <= 0) return;
   --current;
   updateInfo();
 }
 
 function next() {
+  if(current >= answer_json.length - 1) return;
   ++current;
   updateInfo();
 }
