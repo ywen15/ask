@@ -1,0 +1,1 @@
+#buttons{width:100%;height:100%}#buttons .quadrant{width:50%;height:50%;text-align:center}#buttons .quadrant button{border-radius:50%;font-size:48pt}#buttons .quadrant button.disabled{color:#333 !important;background-color:#e6e6e6 !important;border-color:#8c8c8c !important}#buttons #panel-1,#buttons #panel-3{float:left}#buttons #panel-2,#buttons #panel-4{float:right}

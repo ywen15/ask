@@ -1,0 +1,24 @@
+#buttons {
+  width: 100%;
+  height: 100%;
+  .quadrant {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    button {
+      border-radius: 50%;
+      font-size: 48pt;
+    }
+    button.disabled {
+      color: #333 !important;
+      background-color: #e6e6e6 !important;
+      border-color: #8c8c8c !important;
+    }
+  }
+  #panel-1, #panel-3 {
+    float: left;
+  }
+  #panel-2, #panel-4 {
+    float: right;
+  }
+}

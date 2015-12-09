@@ -1,0 +1,11 @@
+#winner
+  p
+    span
+    |  さんの回答
+
+  each val, index in {1:'btn-primary', 2:'btn-danger', 3:'btn-success', 4:'btn-warning'}
+    button(
+      type='button'
+      id=index
+      class='btn btn-lg #{val}'
+    )= index

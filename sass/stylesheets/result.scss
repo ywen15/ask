@@ -1,0 +1,81 @@
+$place: #4467BE;
+$name: #212857;
+$time: #212857;
+$worst: #EE735E;
+$top: #D50F77;
+
+#dist {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin rank() {
+  height: 100%;
+  border: 10px white solid;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#rank {
+  width: 100%;
+  height: 100%;
+  display: none;
+  #side {
+    @include rank()
+    div {
+      font-size:28pt;
+      width: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100%;
+      text-align: center;
+    }
+    #titleTop {
+      display: none;
+    }
+  }
+  #rows {
+    @include rank()
+    font-size: 18pt;
+    .row {
+      visibility: hidden;
+      text-align: center;
+      &:not(:last-child) { margin-bottom: 9px; }
+      div {
+        padding-top: 10px;
+        border-radius: 10px;
+        height: 100%;
+      }
+      .place { background-color: $place; }
+      .name {
+        margin: 0px 5px;
+        background: -webkit-linear-gradient(left, $place , $name); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, $place , $name); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, $place , $name); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, $place , $name); /* Standard syntax */
+      }
+      span {
+        font-weight: normal;
+        font-size: 14pt;
+      }
+      .time { background-color: $time; }
+      .bg-worst { background: $worst; }
+      .bg-top { background: $top; }
+    }
+  }
+}
+
+#winner {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 20pt;
+  button {
+    width: 70%;
+    margin: 15px;
+    padding: 30px 0px;
+    font-size: 32pt;
+  }
+  span { font-size: 28pt }
+}

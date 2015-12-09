@@ -1,0 +1,14 @@
+extends layout
+
+block title
+  | テスト
+
+block scripts
+  script(src='/javascripts/index.js')
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  button(class="btn btn-lg btn-primary", id="send").
+    Send Message

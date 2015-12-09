@@ -1,0 +1,26 @@
+{
+  "name": "ask",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "express-session": "^1.12.1",
+    "highcharts-browserify": "^2.0.2",
+    "jade": "~1.11.0",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
+    "mongodb": "^2.0.49",
+    "mongoose": "^4.2.9",
+    "morgan": "~1.6.1",
+    "node-sass-middleware": "^0.9.7",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.3.7"
+  }
+}

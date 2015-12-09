@@ -1,0 +1,15 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/answer.css')
+
+block scripts
+  script(src='/javascripts/answer.js')
+
+block title
+  |  - 解答ページ
+
+block content
+  include hidden
+  include loader
+  include buttons

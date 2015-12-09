@@ -1,0 +1,19 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/result.css')
+
+block scripts
+  script(src='/highcharts/highcharts.js')
+  script(src='/highcharts/modules/data.js')
+  script(src='/javascripts/jquery.loadTemplate-1.5.0.min.js')
+  script(src='/javascripts/result.js')
+
+block title
+  |  - 結果表示
+
+block content
+  include loader
+  include dist
+  include rank
+  include winner

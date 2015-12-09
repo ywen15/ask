@@ -1,0 +1,8 @@
+#buttons
+  each val, index in {1:'btn-primary', 2:'btn-danger', 3:'btn-success', 4:'btn-warning'}
+    div(class='quadrant', id='panel-#{index}')
+      button(
+        type='button'
+        id=index
+        class='btn btn-lg #{val} button'
+      )= index

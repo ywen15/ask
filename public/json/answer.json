@@ -1,0 +1,380 @@
+{
+  "1": {
+    "title": "乾杯の音頭",
+    "period": "1",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "2": {
+    "title": "箱崎事業所にあるもの",
+    "period": "1",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "3": {
+    "title": "WBS",
+    "period": "1",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "4": {
+    "title": "森さん",
+    "period": "1",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "5": {
+    "title": "半蔵門線",
+    "period": "1",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "6": {
+    "title": "水天宮前駅",
+    "period": "1",
+    "answer": "2",
+    "type": "normal",
+    "order": "top"
+  },
+  "7": {
+    "title": "CEO並び替え",
+    "period": "1",
+    "answer": "3412",
+    "type": "order",
+    "order": "worst"
+  },
+  "8": {
+    "title": "サザエさん",
+    "period": "2",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "9": {
+    "title": "ルフィ声",
+    "period": "2",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "10": {
+    "title": "ウォーリー",
+    "period": "2",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "11": {
+    "title": "五輪干支",
+    "period": "2",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "12": {
+    "title": "五輪会場",
+    "period": "2",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "13": {
+    "title": "りんご",
+    "period": "2",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "14": {
+    "title": "独りんご",
+    "period": "2",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "15": {
+    "title": "福山25周年",
+    "period": "2",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "16": {
+    "title": "ディズニー25周年",
+    "period": "2",
+    "answer": "3",
+    "type": "normal",
+    "order": "top"
+  },
+  "17": {
+    "title": "アトラクション時間並び替え",
+    "period": "2",
+    "answer": "2314",
+    "type": "order",
+    "order": "worst"
+  },
+  "18": {
+    "title": "駐車禁止",
+    "period": "3",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "19": {
+    "title": "マツタケ",
+    "period": "3",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "20": {
+    "title": "さんま",
+    "period": "3",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "21": {
+    "title": "学校",
+    "period": "3",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "22": {
+    "title": "巨人",
+    "period": "3",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "23": {
+    "title": "BIGBANG",
+    "period": "3",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "24": {
+    "title": "三代目",
+    "period": "3",
+    "answer": "1",
+    "type": "normal",
+    "order": "top"
+  },
+  "25": {
+    "title": "徳川死んだ順",
+    "period": "3",
+    "answer": "2413",
+    "type": "order",
+    "order": "worst"
+  },
+  "26": {
+    "title": "スタバ",
+    "period": "4",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "27": {
+    "title": "乳がん",
+    "period": "4",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "28": {
+    "title": "マイナンバー",
+    "period": "4",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "29": {
+    "title": "北陸新幹線",
+    "period": "4",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "30": {
+    "title": "閏秒",
+    "period": "4",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "31": {
+    "title": "PUMA",
+    "period": "4",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "32": {
+    "title": "ポツダム",
+    "period": "4",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "33": {
+    "title": "GHQ",
+    "period": "4",
+    "answer": "4",
+    "type": "normal",
+    "order": "top"
+  },
+  "34": {
+    "title": "ノーベル並び替え",
+    "period": "4",
+    "answer": "2341",
+    "type": "order",
+    "order": "worst"
+  },
+  "35": {
+    "title": "キジ",
+    "period": "5",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "36": {
+    "title": "亀いじめ",
+    "period": "5",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "37": {
+    "title": "流行語",
+    "period": "5",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "38": {
+    "title": "ボジョレー",
+    "period": "5",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "39": {
+    "title": "スターウォーズ",
+    "period": "5",
+    "answer": "1",
+    "type": "normal",
+    "order": "top"
+  },
+  "40": {
+    "title": "映画並び替え",
+    "period": "5",
+    "answer": "1234",
+    "type": "order",
+    "order": "worst"
+  },
+  "41": {
+    "title": "ラグビー",
+    "period": "6",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "42": {
+    "title": "南アフリカ",
+    "period": "6",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "43": {
+    "title": "五郎丸",
+    "period": "6",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "44": {
+    "title": "日本シリーズ",
+    "period": "6",
+    "answer": "4",
+    "type": "normal",
+    "order": "worst"
+  },
+  "45": {
+    "title": "ペッパー",
+    "period": "6",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "46": {
+    "title": "ホームラン",
+    "period": "6",
+    "answer": "1",
+    "type": "normal",
+    "order": "top"
+  },
+  "47": {
+    "title": "ボクシング並び替え",
+    "period": "6",
+    "answer": "4312",
+    "type": "order",
+    "order": "worst"
+  },
+  "48": {
+    "title": "日時当て",
+    "period": "7",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "49": {
+    "title": "かくれんぼ",
+    "period": "7",
+    "answer": "1",
+    "type": "normal",
+    "order": "worst"
+  },
+  "50": {
+    "title": "「さん」の回数",
+    "period": "7",
+    "answer": "3",
+    "type": "normal",
+    "order": "worst"
+  },
+  "51": {
+    "title": "むすんでひらいて",
+    "period": "7",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "52": {
+    "title": "女々しくて",
+    "period": "7",
+    "answer": "2",
+    "type": "normal",
+    "order": "worst"
+  },
+  "53": {
+    "title": "CMロゴる",
+    "period": "7",
+    "answer": "2",
+    "type": "normal",
+    "order": "top"
+  },
+  "54": {
+    "title": "きれいなおねえさん",
+    "period": "7",
+    "answer": "4213",
+    "type": "order",
+    "order": "worst"
+  }
+}

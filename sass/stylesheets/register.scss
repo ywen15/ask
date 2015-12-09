@@ -1,0 +1,34 @@
+#register {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 10pt;
+
+  p { font-size: 12pt; }
+
+  #searching {
+    display: none;
+    img {
+      width: 50px;
+    }
+  }
+
+  #result {
+    display: none;
+    margin-top: 20px;
+
+    .row { margin-bottom: 10px; }
+
+    .col-xs-5 { text-align: right; }
+
+    .col-xs-7 {
+      padding-bottom: 5px;
+      font-weight: bold;
+    }
+  }
+
+  #notFound, #duplicated, #forbidden {
+    display: none;
+    color: red;
+    margin-top: 20px;
+  }
+}

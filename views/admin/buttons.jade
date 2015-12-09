@@ -1,0 +1,23 @@
+mixin row(class1, id1, val1, class2, id2, val2)
+  .row
+    .col-xs-6
+      button(
+        type='button'
+        class='btn btn-lg #{class1}'
+        id='#{id1}'
+      ) #{val1}
+    .col-xs-6
+      button(
+        type='button'
+        class='btn btn-lg #{class2}'
+        id='#{id2}'
+      ) #{val2}
+
++row('btn-default', 'prev', '前', 'btn-default', 'next', '次')
+
++row('btn-info control', 'enable', 'スタート', 'btn-warning control', 'force', '全員復活')
+
+each val in [0, 1, 2, 3]
+  .row
+
++row('btn-success control', 'result', '結果発表', 'btn-danger control', 'overall', '最終結果')

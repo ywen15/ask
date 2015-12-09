@@ -1,0 +1,15 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/overall.css')
+
+block scripts
+  script(src='/javascripts/jquery.loadTemplate-1.5.0.min.js')
+  script(src='/javascripts/overall.js')
+
+block title
+  |  - 最終結果
+
+block content
+  include loader
+  include ranking

@@ -1,0 +1,13 @@
+.container {
+  font-size: 14pt;
+  text-align: center;
+  .row {
+    margin: 20px 0;
+    #title {
+      font-weight: bold;
+    }
+    button {
+      width: 90%
+    }
+  }
+}

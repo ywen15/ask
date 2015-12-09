@@ -1,0 +1,16 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/admin.css')
+
+block scripts
+  script(src='/javascripts/admin.js')
+
+block title
+  |  - 管理画面
+
+block content
+  .container
+    include loader
+    include info
+    include buttons

@@ -1,0 +1,13 @@
+#result
+  each val, index in { 'userid': '社員番号', 'name': '氏名', 'year': '年次', 'competency': 'コンピテンシー' }
+    .row
+      .col-xs-5 #{val}：
+      div(class='col-xs-7', id='result-#{index}')
+
+  .row
+    .col-xs-12
+      a(
+        href='/answer'
+        id='start'
+        class='btn btn-lg btn-success'
+      ) 登録
