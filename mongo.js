@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 //var url = 'mongodb://heroku_0f48fn51:tt7e43vuck0gejasffb25nb7ap@ds027155.mongolab.com:27155/heroku_0f48fn51';
-//var url = 'mongodb://localhost:27017/';
-var url = process.env.MONGOLAB_URI;
+var url = 'mongodb://localhost:27017/';
+//var url = process.env.MONGOLAB_URI;
 var dbname = 'ask';
 var db = null;
 var User = null;
@@ -115,7 +115,7 @@ exports.getRank = function(req, res) {
 
 exports.getOverall = function(req, res) {
   User.find({ corrects: { $ne: 0 } }, {},
-    { sort: { corrects: -1, points: -1 } }, function(err, result) {
+    { sort: { corrects: -1, points: 1 } }, function(err, result) {
     if(err) console.log(err);
     else res.json(result);
   });
@@ -124,7 +124,7 @@ exports.getOverall = function(req, res) {
 function populateDB() {
   User.remove({}, function() {});
   Result.remove({}, function() {});
-  User.create([{"userid":355784,"name":"今橋 昌峰","competency":"ITS#1","type":"FY14"},
+  /*User.create([{"userid":355784,"name":"今橋 昌峰","competency":"ITS#1","type":"FY14"},
 {"userid":356287,"name":"熊 巧迪","competency":"ITS#1","type":"FY14"},
 {"userid":356576,"name":"鳥羽 真司","competency":"ITS#1","type":"FY14"},
 {"userid":356758,"name":"西村 優","competency":"ITS#1","type":"FY14"},
@@ -392,17 +392,17 @@ function populateDB() {
 {"userid":521153,"name":"川口 善照","competency":"Cn#5","type":"LINE"},
 {"userid":532218,"name":"岡田 誠司","competency":"Cn#6","type":"LINE"},
 {"userid":525477,"name":"板倉 美和","competency":"Cn#7","type":"LINE"},
-{"userid":null}]);
-  /*var users = [];
+{"userid":null}]);*/
+  var users = [];
   var results = [];
   User.remove({}, function() {});
   Result.remove({}, function() {});
   for(var i=0; i<200; ++i) {
-    users.push({ userid: 350000 + i * 10, name: 'Name' + i, type: 'FY' + i, competency: 'C' + i, corrects: Math.floor(Math.random() * 2), points: Math.floor(Math.random() * 50) });
+    users.push({ userid: 350000 + i * 10, name: 'Name' + i, type: 'FY' + i, competency: 'C' + i, corrects: Math.floor(Math.random() * 10), points: Math.floor(Math.random() * 50) });
   }
-  User.create(users);*/
+  User.create(users);
 
-  /*User.find(function(err, result) {
+  User.find(function(err, result) {
     if(err) console.log(err);
     for(var r=0; r<result.length; ++r) {
       for(var i=1; i<=54; ++i) {
@@ -415,5 +415,5 @@ function populateDB() {
         });
       }
     }
-  });*/
+  });
 }
