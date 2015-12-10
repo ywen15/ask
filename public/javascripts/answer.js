@@ -23,6 +23,7 @@ socket.on('start', function(data) {
 function setupButtons() {
   var diameter = Math.min($(window).width(), $(window).height()) / 2;
   $('.button').css({
+    'marginTop': $(window).height() / 4 - diameter / 2,
     'width': diameter,
     'height': diameter
   });

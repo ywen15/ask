@@ -66,7 +66,7 @@ function clearView() {
     $('#titleWorst').css('display', 'none');
     $('#titleTop').css('display', 'block');
   }
-  if(worst) socket.emit('slowest', { slowest: worst });
+  socket.emit('slowest', { slowest: (rank) ? rank[rank.length-1]._user.userid : null });
   hideLoader();
 }
 
