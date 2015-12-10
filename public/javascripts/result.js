@@ -26,9 +26,21 @@ function getDist() {
     url: '/api/getDist/' + current.question
   }).done(function(data) {
     dist = data;
+    if(data.length < 4) padDist();
     def.resolve();
   })
   return def.promise();
+}
+
+function padDist() {
+  var offset = 1;
+  for(var i=0; i<dist.length; ++i) {
+    if(parseInt(dist[i]._id) == offset) ++offset;
+    else dist.unshift({ _id: offset, y: 0 });
+  }
+  while(dist.length < 4) {
+    dist.unshift({ _id: dist.length + 1, y: 0 });
+  }
 }
 
 function getRank() {
@@ -80,7 +92,7 @@ function showDist() {
     xAxis: { categories: [1, 2, 3, 4], labels: { style: { fontSize: '18pt' } } },
     yAxis: { title: { text: '回答者数(人)', style: { fontSize: '12pt' } }, labels: { style: { fontSize: '18pt' } } },
     legend: { enabled: false },
-    plotOptions: { column: { minPointLength: 3 }, series: { dataLabels: { enabled: true, format: '{point.y}', style: { fontSize: '24pt' } } } },
+    plotOptions: { column: { minPointLength: 1 }, series: { dataLabels: { enabled: true, format: '{point.y}', style: { fontSize: '24pt' } } } },
     series: [{
       colorByPoint: true,
       data: dist
