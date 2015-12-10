@@ -59,6 +59,7 @@ $(document).ready(function() {
   $('.control').click(function() {
     var $btn = $(this);
     if($btn.attr('id') == 'overall' && !window.confirm('最終結果みる?')) return;
+    else if($btn.attr('id') == 'reset' && !window.confirm('DBの中身全部消す?'))　return;
     changeState($btn.attr('id'));
   });
 });
