@@ -77,7 +77,7 @@ function showDist() {
     credits: { enabled: false },
     colors: [ COLOR_PRIMARY, COLOR_DANGER, COLOR_SUCCESS, COLOR_WARNING ],
     title: { text: '回答分布' },
-    xAxis: { type: 'category', labels: { style: { fontSize: '18pt' } } },
+    xAxis: { categories: [1, 2, 3, 4], labels: { style: { fontSize: '18pt' } } },
     yAxis: { title: { text: '回答者数(人)', style: { fontSize: '12pt' } }, labels: { style: { fontSize: '18pt' } } },
     legend: { enabled: false },
     plotOptions: { column: { minPointLength: 3 }, series: { dataLabels: { enabled: true, format: '{point.y}', style: { fontSize: '24pt' } } } },
@@ -99,6 +99,7 @@ function showAns() {
 
 function appendRank() {
   var def = new $.Deferred();
+  if(rank == null) def.resolve();
   var bg = '';
   $.each(rank, function(index, value) {
     q.push(value._user.userid);

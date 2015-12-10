@@ -10,5 +10,6 @@ router.post('/updateStat', mongo.updateStat);
 router.get('/getDist/:question', mongo.getDist);
 router.get('/getRank/:question/:answer/:order', mongo.getRank);
 router.get('/getOverall', mongo.getOverall);
+router.get('/resetDB', mongo.resetDB);
 
 module.exports = router;

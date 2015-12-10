@@ -40,6 +40,11 @@ function changeState(action) {
     socket.emit('result', { question: current, period: c.period, answer: c.answer, type: c.type, order: c.order, result: action })
     next();
   }
+  else if(action == 'reset') {
+    $.ajax({
+      url: '/api/resetDB'
+    });
+  }
 }
 
 $(document).ready(function() {

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-//var url = 'mongodb://heroku_0f48fn51:tt7e43vuck0gejasffb25nb7ap@ds027155.mongolab.com:27155/heroku_0f48fn51';
-var url = 'mongodb://localhost:27017/';
+var url = 'mongodb://heroku_0f48fn51:tt7e43vuck0gejasffb25nb7ap@ds027155.mongolab.com:27155/heroku_0f48fn51';
+//var url = 'mongodb://localhost:27017/';
 //var url = process.env.MONGOLAB_URI;
 var dbname = 'ask';
 var db = null;
@@ -121,10 +121,19 @@ exports.getOverall = function(req, res) {
   });
 }
 
+exports.resetDB = function(req, res) {
+  User.update({}, { $set: { corrects: 0, points: 0 } }, function(err, result) {
+    res.json();
+  });
+  Result.remove({}, function(err, result) {
+    res.json();
+  });
+}
+
 function populateDB() {
   User.remove({}, function() {});
   Result.remove({}, function() {});
-  /*User.create([{"userid":355784,"name":"今橋 昌峰","competency":"ITS#1","type":"FY14"},
+  User.create([{"userid":355784,"name":"今橋 昌峰","competency":"ITS#1","type":"FY14"},
 {"userid":356287,"name":"熊 巧迪","competency":"ITS#1","type":"FY14"},
 {"userid":356576,"name":"鳥羽 真司","competency":"ITS#1","type":"FY14"},
 {"userid":356758,"name":"西村 優","competency":"ITS#1","type":"FY14"},
@@ -392,8 +401,8 @@ function populateDB() {
 {"userid":521153,"name":"川口 善照","competency":"Cn#5","type":"LINE"},
 {"userid":532218,"name":"岡田 誠司","competency":"Cn#6","type":"LINE"},
 {"userid":525477,"name":"板倉 美和","competency":"Cn#7","type":"LINE"},
-{"userid":null}]);*/
-  var users = [];
+{"userid":null}]);
+  /*var users = [];
   var results = [];
   User.remove({}, function() {});
   Result.remove({}, function() {});
@@ -415,5 +424,5 @@ function populateDB() {
         });
       }
     }
-  });
+  });*/
 }
