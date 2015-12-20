@@ -33,7 +33,7 @@ function showUser(user) {
 $(document).ready(function() {
   $('#userid').keyup(function() {
     var userid = $(this).val();
-    if(!isNaN(userid) && userid.length == 6) {
+    if(userid.length == 6) {
       viewForSearch();
       findUser(userid);
     }
