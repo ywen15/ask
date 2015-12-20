@@ -9,7 +9,7 @@ socket.on('start', function(data) {
   clearTimeout(to);
   current = data;
   if(current.enable == 'force' || current.type == 'order') answerable = true;
-  //else if(current.slowest == userid) answerable = false;
+  else if(current.slowest == userid) answerable = false;
   start = +new Date();
   end = 0;
   if(!answerable) return;
