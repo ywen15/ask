@@ -11,15 +11,6 @@ var audio_result = new Audio();
 var audio_worst = new Audio();
 var audio_top = new Audio();
 
-function waitForResult() {
-  socket.on('result', function(data) {
-    if(data.result == 'overall') location.href = '/overall';
-    current = data;
-    showLoader();
-    (current.type == 'normal') ? processNormal() : processOrder();
-  });
-}
-
 function getDist() {
   var def = new $.Deferred();
   $.ajax({
@@ -33,13 +24,10 @@ function getDist() {
 }
 
 function padDist() {
-  var offset = 1;
-  for(var i=0; i<dist.length; ++i) {
-    if(parseInt(dist[i]._id) == offset) ++offset;
-    else dist.unshift({ _id: offset, y: 0 });
-  }
-  while(dist.length < 4) {
-    dist.unshift({ _id: dist.length + 1, y: 0 });
+  for(var i=1; i<=4; ++i) {
+    if(!findInDist('' + i)) {
+      dist.insert(i-1, { _id: '' + i, y: 0 });
+    }
   }
 }
 
@@ -78,7 +66,8 @@ function clearView() {
     $('#titleWorst').css('display', 'none');
     $('#titleTop').css('display', 'block');
   }
-  socket.emit('slowest', { slowest: (rank) ? rank[rank.length-1]._user.userid : null });
+
+  socket.emit('slowest', { slowest: (rank.length > 0) ? rank[rank.length-1]._user.userid : null });
   hideLoader();
 }
 
@@ -90,7 +79,7 @@ function showDist() {
     colors: [ COLOR_PRIMARY, COLOR_DANGER, COLOR_SUCCESS, COLOR_WARNING ],
     title: { text: '回答分布' },
     xAxis: { categories: [1, 2, 3, 4], labels: { style: { fontSize: '18pt' } } },
-    yAxis: { title: { text: '回答者数(人)', style: { fontSize: '12pt' } }, labels: { style: { fontSize: '18pt' } } },
+    yAxis: { allowDecimals: false, title: { text: '回答者数(人)', style: { fontSize: '12pt' } }, labels: { style: { fontSize: '18pt' } } },
     legend: { enabled: false },
     plotOptions: { column: { minPointLength: 1 }, series: { dataLabels: { enabled: true, format: '{point.y}', style: { fontSize: '24pt' } } } },
     series: [{
@@ -111,8 +100,12 @@ function showAns() {
 
 function appendRank() {
   var def = new $.Deferred();
-  if(rank == null) def.resolve();
+  if(rank.length == 0) { return def.resolve(); }
+
+  var qualifiers = findInDist(current.answer);
+  var worstIndex = (parseInt(qualifiers.y) <= 10) ? 0 : parseInt(qualifiers.y) - 10;
   var bg = '';
+
   $.each(rank, function(index, value) {
     q.push(value._user.userid);
     if(current.order == 'worst' && index == rank.length - 1) bg = 'bg-worst flash';
@@ -121,7 +114,7 @@ function appendRank() {
     $('#rows').loadTemplate('/templates/_row.html', {
       'row': value._user.userid,
       'bg': bg,
-      'place': index + 1,
+      'place': (current.order == 'top') ? index + 1 : index + 1 + worstIndex,
       'name': value._user.name,
       'span': '(' + value._user.type + ')',
       'time': parseFloat(value.time).toFixed(2),
@@ -166,6 +159,14 @@ function showRank() {
   }
 }
 
+function findInDist(id) {
+  var result = $.grep(dist, function(e) {
+    return e._id == id;
+  });
+
+  return (result.length > 0) ? result[0] : false
+}
+
 function wait() {
   var def = new $.Deferred();
   setTimeout(function() {
@@ -196,5 +197,11 @@ $(document).ready(function() {
   audio_result.src = '/sounds/dist.mp3';
   audio_worst.src = '/sounds/worst.mp3';
   audio_top.src = '/sounds/top.mp3';
-  waitForResult();
+
+  socket.on('result', function(data) {
+    if(data.result == 'overall') location.href = '/overall';
+    current = data;
+    showLoader();
+    (current.type == 'normal') ? processNormal() : processOrder();
+  });
 });

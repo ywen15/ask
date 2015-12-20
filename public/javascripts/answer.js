@@ -2,14 +2,14 @@ var start = 0;
 var end = 0;
 var current = null;
 var userid = null;
-var answerable = true;
+var answerable = false;
 var to = null;
 
 socket.on('start', function(data) {
   clearTimeout(to);
   current = data;
   if(current.enable == 'force' || current.type == 'order') answerable = true;
-  else if(current.slowest == userid) answerable = false;
+  //else if(current.slowest == userid) answerable = false;
   start = +new Date();
   end = 0;
   if(!answerable) return;
@@ -40,8 +40,8 @@ function disableButton(btn) {
 function submitAns(answer) {
   showLoader();
   enableButton();
-  if(current.type == 'normal' && answer != current.answer) answerable = false;
-console.log(answerable);
+  if(answer != current.answer) answerable = false;
+
   $.ajax({
     url: '/api/submitAns/',
     type: 'POST',
@@ -55,7 +55,7 @@ console.log(answerable);
     timeout: AJAX_TIMEOUT
   });
 
-  if(answer == current.answer) {
+  if(answer == current.answer && end - start > 0) {
     $.ajax({
       url: '/api/updateStat/',
       type: 'POST',
@@ -69,6 +69,10 @@ console.log(answerable);
 }
 
 $(document).ready(function() {
+  window.onbeforeunload = function(e) {
+    return 'ピリオドの途中でリロードや他ページに移動すると、次のピリオドが始まるまでクイズの回答権がなくなります。';
+  };
+
   setupButtons();
   var $choice = $('#choice');
   userid = $('#userid').val();

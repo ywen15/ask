@@ -1,6 +1,5 @@
-//var host = location.origin.replace(/^http/, 'ws');
-//var socket = host || io.connect('http://localhost:3000');
 var socket = io();
+
 const TRANS_EFFECT_TIME = 300;
 const AJAX_TIMEOUT = 10000;
 const NORMAL_ANSWER_TIME = 10000;
@@ -36,3 +35,7 @@ function pageTransition(page1, page2) {
   }, TRANS_EFFECT_TIME);
   return def.promise();
 }
+
+Array.prototype.insert = function(index, item) {
+  this.splice(index, 0, item);
+};
